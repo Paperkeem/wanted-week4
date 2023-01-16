@@ -1,22 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { addComment } from '../redux/commentSlice';
+import { useAppDispatch } from '../redux/hooks';
+import { CommentState } from '../type/type';
 
 export default function Form() {
+  const dispatch = useAppDispatch();
+  const [form, setForm] = useState<CommentState>({ profile_url: "https://picsum.photos/id/1/50/50", createdAt: "2020-05-30" });
+  
+  const handleChange = (e: any) => {
+    const { name, value } = e.currentTarget;
+    setForm((form) => ({ ...form, [name]: value }));
+  }
+  
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    dispatch(addComment(form));
+    setForm({ profile_url: "https://picsum.photos/id/1/50/50", createdAt: "2020-05-30" });
+  }
+  
   return (
     <FormStyle>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="profile_url"
-          placeholder="https://picsum.photos/id/1/50/50"
+          defaultValue="https://picsum.photos/id/1/50/50"
+          onChange={handleChange}
           required
         />
         <br />
-        <input type="text" name="author" placeholder="작성자" />
+        <input
+          type="text"
+          name="author"
+          placeholder="작성자"
+          value={form.author || ''}
+          onChange={handleChange}
+        />
         <br />
-        <textarea name="content" placeholder="내용" required></textarea>
+        <textarea
+          name="content"
+          placeholder="내용"
+          value={form.content || ''}
+          onChange={handleChange}
+          required></textarea>
         <br />
-        <input type="text" name="createdAt" placeholder="2020-05-30" required />
+        <input
+          type="text"
+          name="createdAt"
+          value="2020-05-30"
+          onChange={handleChange}
+          required />
         <br />
         <button type="submit">등록</button>
       </form>

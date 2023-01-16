@@ -5,11 +5,11 @@ import PageList from './components/PageList';
 
 function App() {
   return (
-    <div>
+    <>
       <CommentList />
       <PageList />
       <Form />
-    </div>
+    </>
   );
 }
 
