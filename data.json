@@ -1,13 +1,6 @@
 {
   "comments": [
     {
-      "id": 1,
-      "profile_url": "https://picsum.photos/id/1/50/50",
-      "author": "abc_1",
-      "content": "UI 테스트는 어떻게 진행하나요",
-      "createdAt": "2022-03-01"
-    },
-    {
       "id": 2,
       "profile_url": "https://picsum.photos/id/2/50/50",
       "author": "abc_2",
@@ -123,7 +116,7 @@
       "id": 18,
       "profile_url": "https://picsum.photos/id/18/50/50",
       "author": "abc_18",
-      "content": "local storage는 언제 사용하는게 좋나요.",
+      "content": "local storage는 언제 사용하는게 좋나요??ㅋㅋㅎㅎ",
       "createdAt": "2022-03-18"
     },
     {
@@ -150,9 +143,23 @@
     {
       "profile_url": "https://picsum.photos/id/1/50/50",
       "createdAt": "2020-05-30",
-      "author": "ㅋ",
-      "content": "ㅋ",
+      "author": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "content": "ㅋㅋㅋㅋㅋㅋㅋㅋ",
       "id": 24
+    },
+    {
+      "profile_url": "https://picsum.photos/id/3/50/50",
+      "createdAt": "2020-05-30",
+      "author": "안녕?",
+      "content": "ㅋㅋㅋㅋㅋ",
+      "id": 25
+    },
+    {
+      "profile_url": "https://picsum.photos/id/2/50/50",
+      "createdAt": "2020-05-30",
+      "author": "ㅋㅋㅎㅎ",
+      "content": "ㅋ",
+      "id": 26
     }
   ]
 }

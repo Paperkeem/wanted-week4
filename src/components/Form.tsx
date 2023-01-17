@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import usePagenation from '../hooks/usePagenation';
 import { addComment, updateComment } from '../redux/commentSlice';
 import { useAppDispatch } from '../redux/hooks';
 import { CommentState, FProps } from '../type/type';
 
 export default function Form({form, setForm} :FProps) {
+  const { handleClick } = usePagenation();
   const dispatch = useAppDispatch();
 
   const handleChange = (e: any) => {
@@ -16,6 +18,7 @@ export default function Form({form, setForm} :FProps) {
     e.preventDefault();
     form.id ? dispatch(updateComment(form)) : dispatch(addComment(form));
     setForm({ profile_url: "https://picsum.photos/id/1/50/50", createdAt: "2020-05-30" });
+    handleClick(1);
   }
   
   return (

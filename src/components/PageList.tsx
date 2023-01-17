@@ -1,19 +1,14 @@
 import styled from "styled-components";
 import usePagenation from '../hooks/usePagenation';
-import { getList } from '../redux/commentSlice';
-import { useAppDispatch } from '../redux/hooks';
 
 export default function PageList() {
-  const { maxPage } = usePagenation();
-  const dispatch = useAppDispatch();
-  
+  const { maxPage, handleClick } = usePagenation();
+
   const pageArray = [];
   for (let i = 1; i <= maxPage; i++){
-    pageArray.push(<Page key="i" onClick={() => handleClick(i)}>{i}</Page>);
+    pageArray.push(<Page key={i} onClick={() => handleClick(i)}>{i}</Page>);
   }
 
-  const handleClick = (page: number) => dispatch(getList(page));
-  
   return <PageListStyle>{pageArray}</PageListStyle>;
 }
 
