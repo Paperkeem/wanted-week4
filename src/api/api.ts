@@ -1,16 +1,12 @@
+import { CommentState } from './../type/type.d';
 import axios from 'axios';
 
-export default class JsonApi {
-  httpClient;
-  
-  constructor() {
-    this.httpClient = axios.create({
-      baseURL: 'http://localhost:4000',
-    })
-  }  
+const instance = axios.create({
+  baseURL: 'http://localhost:4000',
+});
 
-  async getAllComment() {
-    return this.httpClient.get(`comments`).then(console.log);
-  };
-
+export const callApi = {
+  getList: () => instance.get(`/comments`),
+  addComment: (newComment: CommentState) => instance.post(`/comments`, newComment),
+  delComment: (id: number) => instance.delete(`/comments/${id}`),
 }

@@ -1,3 +1,4 @@
+import { callApi } from './../api/api';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios';
@@ -14,7 +15,7 @@ export const getList = createAsyncThunk<
   string | undefined,
   { rejectValue: CommentError }
   >("GET_COMMENT", async () => {
-    const response = await axios.get("http://localhost:4000/comments");
+    const response = await callApi.getList();
     return response.data;
   });
 
@@ -23,29 +24,27 @@ export const commentSlice = createSlice({
   initialState,
   reducers: {
     addComment: (state, action: PayloadAction<CommentState>) => {
-      axios.post("http://localhost:4000/comments", action.payload);
+      callApi.addComment(action.payload);
+      state.push(action.payload);
     },
     updateComment: (state, action: PayloadAction<number>) => {
       // FIX ME
       return state;
     },
     deleteComment: (state, action: PayloadAction<number>) => {
-      // FIX ME
-      return state;
+      callApi.delComment(action.payload);
+      return state.filter(state => state.id !== action.payload);
     },
   },
   extraReducers: (builder) => {
     builder
-      // 통신 중
       .addCase(getList.pending, (state) => {
         console.log("api calling")
       })
-      // 통신 성공
       .addCase(getList.fulfilled, (state, { payload }) => {
         console.log(payload);
         return [...payload];
       })
-      // 통신 에러
       .addCase(getList.rejected, (state, { payload }) => {
         console.log("api calling error")
       });

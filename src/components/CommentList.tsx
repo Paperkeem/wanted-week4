@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { getList } from '../redux/commentSlice';
+import { deleteComment, getList } from '../redux/commentSlice';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 
 export default function CommentList() {
@@ -10,6 +10,9 @@ export default function CommentList() {
     dispatch(getList())
   }, []);
 
+  const handleDelete = (id: number) => {
+    dispatch(deleteComment(id));
+  }
   return (
     <>
       {comment?.map((comment:any, key:number) => (
@@ -23,8 +26,8 @@ export default function CommentList() {
           <Content>{comment.content}</Content>
 
           <Button>
-            <a>수정</a>
-            <a>삭제</a>
+            <button>수정</button>
+            <button onClick={()=>handleDelete(comment.id)}>삭제</button>
           </Button>
 
           <hr />
@@ -59,7 +62,7 @@ const Content = styled.div`
 const Button = styled.div`
   text-align: right;
   margin: 10px 0;
-  & > a {
+  & > button {
     margin-right: 10px;
     padding: 0.375rem 0.75rem;
     border-radius: 0.25rem;
