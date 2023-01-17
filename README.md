@@ -35,7 +35,7 @@ yarn start
 
 ## 기술스택
 
-> TypeScript, React, Sass, Redux, react-query
+> React, TypeScript, Redux, axios, json-server, styled-components
 
 <br>
 
