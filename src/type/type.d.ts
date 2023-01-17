@@ -5,3 +5,9 @@ export interface CommentState {
   content?: string;
   createdAt?: string;
 }
+
+interface Props{
+  form: CommentState;
+  setForm: (a: any) => any;
+  handleUpdate: (id: number) => void;
+}

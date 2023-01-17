@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { deleteComment, getList } from '../redux/commentSlice';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { Props } from '../type/type';
 
-export default function CommentList() {
+export default function CommentList({form, setForm, handleUpdate} :Props) {
   const dispatch = useAppDispatch();
   const comment = useAppSelector((state) => state.comment);
-  useEffect(() => {
-    dispatch(getList())
-  }, []);
+  
+  useEffect(() => { dispatch(getList()) }, []);
 
   const handleDelete = (id: number) => {
     dispatch(deleteComment(id));
@@ -26,7 +26,7 @@ export default function CommentList() {
           <Content>{comment.content}</Content>
 
           <Button>
-            <button>수정</button>
+            <button onClick={()=>handleUpdate(comment.id)}>수정</button>
             <button onClick={()=>handleDelete(comment.id)}>삭제</button>
           </Button>
 

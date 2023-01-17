@@ -1,7 +1,6 @@
 import { callApi } from './../api/api';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import axios from 'axios';
 import { CommentState } from '../type/type';
 
 interface CommentError {
@@ -27,9 +26,10 @@ export const commentSlice = createSlice({
       callApi.addComment(action.payload);
       state.push(action.payload);
     },
-    updateComment: (state, action: PayloadAction<number>) => {
-      // FIX ME
-      return state;
+    updateComment: (state, action: PayloadAction<CommentState>) => {
+      const form = action.payload
+      callApi.updateComment(form.id, form);
+      if (form.id) state.splice(form.id - 1, 1, form);
     },
     deleteComment: (state, action: PayloadAction<number>) => {
       callApi.delComment(action.payload);
@@ -42,7 +42,6 @@ export const commentSlice = createSlice({
         console.log("api calling")
       })
       .addCase(getList.fulfilled, (state, { payload }) => {
-        console.log(payload);
         return [...payload];
       })
       .addCase(getList.rejected, (state, { payload }) => {

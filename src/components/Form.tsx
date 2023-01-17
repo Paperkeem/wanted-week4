@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { addComment } from '../redux/commentSlice';
+import { addComment, updateComment } from '../redux/commentSlice';
 import { useAppDispatch } from '../redux/hooks';
-import { CommentState } from '../type/type';
+import { CommentState, Props } from '../type/type';
 
-export default function Form() {
+export default function Form({form, setForm, handleUpdate} :Props) {
   const dispatch = useAppDispatch();
-  const [form, setForm] = useState<CommentState>({ profile_url: "https://picsum.photos/id/1/50/50", createdAt: "2020-05-30" });
-  
+
   const handleChange = (e: any) => {
     const { name, value } = e.currentTarget;
-    setForm((form) => ({ ...form, [name]: value }));
+    setForm((form:CommentState) => ({ ...form, [name]: value }));
   }
   
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    dispatch(addComment(form));
+    form.id ? dispatch(updateComment(form)) : dispatch(addComment(form));
     setForm({ profile_url: "https://picsum.photos/id/1/50/50", createdAt: "2020-05-30" });
   }
   
