@@ -39,11 +39,7 @@ export const commentSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getList.pending, (state) => {
-        console.log("api calling")
-      })
       .addCase(getList.fulfilled, (state, { payload }) => {
-        console.log(payload);
         return [...payload];
       })
       .addCase(getList.rejected, (state, { payload }) => {

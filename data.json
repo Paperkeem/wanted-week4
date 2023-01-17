@@ -136,30 +136,51 @@
     {
       "id": 22,
       "profile_url": "https://picsum.photos/id/22/50/50",
-      "author": "abc_22ㅎㅎ🖤🖤",
-      "content": "주변에 React 개발자 있나요??",
+      "author": "abc_22",
+      "content": "주변에 React 개발자 있나요?",
       "createdAt": "2022-03-22"
-    },
-    {
-      "profile_url": "https://picsum.photos/id/1/50/50",
-      "createdAt": "2020-05-30",
-      "author": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "content": "ㅋㅋㅋㅋㅋㅋㅋㅋ",
-      "id": 24
     },
     {
       "profile_url": "https://picsum.photos/id/3/50/50",
       "createdAt": "2020-05-30",
-      "author": "안녕?",
-      "content": "ㅋㅋㅋㅋㅋ",
+      "author": "스터디",
+      "content": "알고리즘 같이 푸실분 계신가요?",
       "id": 25
     },
     {
-      "profile_url": "https://picsum.photos/id/2/50/50",
+      "profile_url": "https://picsum.photos/id/1/50/50",
       "createdAt": "2020-05-30",
-      "author": "ㅋㅋㅎㅎ",
-      "content": "ㅋ",
+      "author": "리액트",
+      "content": "장점 알려주실 분 계신가요",
       "id": 26
+    },
+    {
+      "profile_url": "https://picsum.photos/id/1/50/50",
+      "createdAt": "2020-05-30",
+      "author": "스터디",
+      "content": "리액트의 좋은 점이 뭔가요?",
+      "id": 27
+    },
+    {
+      "profile_url": "https://picsum.photos/id/5/50/50",
+      "createdAt": "2020-05-30",
+      "author": "리액트 vs 뷰",
+      "content": "뭐가 좋나요",
+      "id": 28
+    },
+    {
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "createdAt": "2020-05-30",
+      "author": "앵귤러",
+      "content": "2달 배웠네요",
+      "id": 29
+    },
+    {
+      "profile_url": "https://picsum.photos/id/3/50/50",
+      "createdAt": "2020-05-30",
+      "author": "자바 11 어떤가요?",
+      "content": "어때요?",
+      "id": 30
     }
   ]
 }

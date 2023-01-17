@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { callApi } from '../api/api';
 import { getList } from '../redux/commentSlice';
-import { useAppDispatch } from '../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 
 export default function usePagenation() {
-  //FIXME : maxPage가 갱신 안됨!! 
 
+  const comment = useAppSelector(state => state.comment);
   const [maxPage, setMaxPage] = useState(0);
   const dispatch = useAppDispatch();
   
@@ -13,8 +13,7 @@ export default function usePagenation() {
 
   useEffect(() => {
     callApi.getList().then((res) => setMaxPage(Math.ceil(res.data.length / 4)));
-  }, []);
+  }, [comment]);
 
-  return { maxPage, handleClick }
+  return { maxPage, setMaxPage, handleClick }
 }
-
