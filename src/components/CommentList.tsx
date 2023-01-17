@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import usePagenation from '../hooks/usePagenation';
 import { deleteComment, getList } from '../redux/commentSlice';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { CProps } from '../type/type';
 
-export default function CommentList({ handleUpdate }: CProps) {
-  const { handleClick } = usePagenation();
+export default function CommentList({ handleUpdate, handleClick }: CProps) {
   const dispatch = useAppDispatch();
   const comment = useAppSelector((state) => state.comment);
   

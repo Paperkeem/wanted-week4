@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { addComment, updateComment } from '../redux/commentSlice';
 import { useAppDispatch } from '../redux/hooks';
-import { CommentState, FProps } from '../type/type';
+import { CommentState, FoProps } from '../type/type';
 
-export default function Form({form, setForm, handleClick}: FProps) {
+export default function Form({form, setForm, handleClick}: FoProps) {
   const dispatch = useAppDispatch();
 
   const handleChange = (e: any) => {

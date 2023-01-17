@@ -1,4 +1,3 @@
-import { FProps } from './type.d';
 export interface CommentState {
   id?: number;
   profile_url: string;
@@ -17,7 +16,7 @@ export interface CProps extends PageProps {
   handleUpdate: (id: number) => void;
 }
 
-export interface FProps extends PageProps {
+export interface FoProps extends PageProps {
   form: CommentState;
   setForm: (a: any) => any;
 }

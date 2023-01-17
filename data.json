@@ -116,14 +116,14 @@
       "id": 18,
       "profile_url": "https://picsum.photos/id/18/50/50",
       "author": "abc_18",
-      "content": "local storage는 언제 사용하는게 좋나요??ㅋㅋㅎㅎ",
+      "content": "local storage는 언제 사용하는게 좋나요?",
       "createdAt": "2022-03-18"
     },
     {
       "id": 19,
       "profile_url": "https://picsum.photos/id/19/50/50",
       "author": "abc_19",
-      "content": "막히면 대답은 빨리 해주나요?ㅎ",
+      "content": "막히면 대답은 빨리 해주나요~?",
       "createdAt": "2022-03-19"
     },
     {
@@ -137,35 +137,35 @@
       "id": 22,
       "profile_url": "https://picsum.photos/id/22/50/50",
       "author": "abc_22",
-      "content": "주변에 React 개발자 있나요?",
+      "content": "주변에 React 개발자 있나요??",
       "createdAt": "2022-03-22"
     },
     {
       "profile_url": "https://picsum.photos/id/3/50/50",
       "createdAt": "2020-05-30",
       "author": "스터디",
-      "content": "알고리즘 같이 푸실분 계신가요?",
+      "content": "알고리즘 같이 푸실분 계신가요~???",
       "id": 25
     },
     {
       "profile_url": "https://picsum.photos/id/1/50/50",
       "createdAt": "2020-05-30",
       "author": "리액트",
-      "content": "장점 알려주실 분 계신가요",
+      "content": "장점 알려주실 분 계신가요~???",
       "id": 26
     },
     {
       "profile_url": "https://picsum.photos/id/1/50/50",
       "createdAt": "2020-05-30",
       "author": "스터디",
-      "content": "리액트의 좋은 점이 뭔가요???",
+      "content": "리액트의 좋은 점이 뭔가요",
       "id": 27
     },
     {
       "profile_url": "https://picsum.photos/id/5/50/50",
       "createdAt": "2020-05-30",
       "author": "리액트 vs 뷰",
-      "content": "뭐가 좋나요",
+      "content": "뭐가 좋을까요!",
       "id": 28
     }
   ]
