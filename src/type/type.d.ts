@@ -1,3 +1,4 @@
+import { FProps } from './type.d';
 export interface CommentState {
   id?: number;
   profile_url: string;
@@ -6,11 +7,17 @@ export interface CommentState {
   createdAt?: string;
 }
 
-interface CProps {
+export interface PageProps {
+  focusNum: number;
+  maxPage: number;
+  handleClick: (page: number, e?: any) => void;
+}
+
+export interface CProps extends PageProps {
   handleUpdate: (id: number) => void;
 }
 
-interface FProps {
+export interface FProps extends PageProps {
   form: CommentState;
   setForm: (a: any) => any;
 }

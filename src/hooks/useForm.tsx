@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { callApi } from '../api/api';
 import { CommentState } from '../type/type';
 

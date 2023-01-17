@@ -1,12 +1,20 @@
 import styled from "styled-components";
-import usePagenation from '../hooks/usePagenation';
+import { PageProps } from '../type/type';
 
-export default function PageList() {
-  const { maxPage, handleClick } = usePagenation();
+type StProps = {
+  isFocus: boolean;
+}
 
+export default function PageList({focusNum, maxPage, handleClick}: PageProps) {
   const pageArray = [];
   for (let i = 1; i <= maxPage; i++){
-    pageArray.push(<Page key={i} onClick={() => handleClick(i)}>{i}</Page>);
+    pageArray.push(
+      <Page
+        key={i}
+        isFocus={focusNum == i ? true : false}
+        onClick={(e) => handleClick(i, e)}
+      >{i}
+      </Page>);
   }
 
   return <PageListStyle>{pageArray}</PageListStyle>;
@@ -17,17 +25,13 @@ const PageListStyle = styled.div`
   text-align: center;
 `;
 
-const Page = styled.button`
+const Page = styled.button<StProps>`
   padding: 0.375rem 0.75rem;
   border-radius: 0.25rem;
   font-size: 1rem;
   line-height: 1.5;
   border: 1px solid lightgray;
   margin-right: 3px;
-  
-  /* FIXME */
-  &:active{
-    background: gray;
-    color: #fff;
-  }
+  color: ${props=>(props.isFocus ? 'white' : 'black')};
+  background-color: ${props=>(props.isFocus ? 'gray' : 'white')};
 `;

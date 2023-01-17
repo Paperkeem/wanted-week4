@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import usePagenation from '../hooks/usePagenation';
 import { addComment, updateComment } from '../redux/commentSlice';
 import { useAppDispatch } from '../redux/hooks';
 import { CommentState, FProps } from '../type/type';
 
-export default function Form({form, setForm} :FProps) {
-  const { handleClick } = usePagenation();
+export default function Form({form, setForm, handleClick}: FProps) {
   const dispatch = useAppDispatch();
 
   const handleChange = (e: any) => {
