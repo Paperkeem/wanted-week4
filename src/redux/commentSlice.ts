@@ -11,10 +11,10 @@ const initialState: CommentState[] = [];
 
 export const getList = createAsyncThunk<
   CommentState[],
-  string | undefined,
+  number | undefined,
   { rejectValue: CommentError }
-  >("GET_COMMENT", async () => {
-    const response = await callApi.getList();
+  >("GET_COMMENT", async (page = 1) => {
+    const response = await callApi.getCommentByPage(page);
     return response.data;
   });
 

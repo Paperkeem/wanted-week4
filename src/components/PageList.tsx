@@ -1,14 +1,19 @@
-import React from "react";
 import styled from "styled-components";
+import usePagenation from '../hooks/usePagenation';
+import { getList } from '../redux/commentSlice';
+import { useAppDispatch } from '../redux/hooks';
 
 export default function PageList() {
+  const { maxPage } = usePagenation();
+  const dispatch = useAppDispatch();
+  
   const pageArray = [];
+  for (let i = 1; i <= maxPage; i++){
+    pageArray.push(<Page key="i" onClick={() => handleClick(i)}>{i}</Page>);
+  }
 
-  pageArray.push(
-    // 임시로 페이지 하나만 설정했습니다.
-    <Page key="1">1</Page>
-  );
-
+  const handleClick = (page: number) => dispatch(getList(page));
+  
   return <PageListStyle>{pageArray}</PageListStyle>;
 }
 
