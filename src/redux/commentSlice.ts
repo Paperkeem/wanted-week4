@@ -29,6 +29,7 @@ export const commentSlice = createSlice({
     updateComment: (state, action: PayloadAction<CommentState>) => {
       const form = action.payload
       callApi.updateComment(form.id, form);
+      // FIXME : 바로 인덱스 번호로 지우지 말고 findIndex 해서 인덱스 번호 찾아서 지우기
       if (form.id) state.splice(form.id - 1, 1, form);
     },
     deleteComment: (state, action: PayloadAction<number>) => {
@@ -42,6 +43,7 @@ export const commentSlice = createSlice({
         console.log("api calling")
       })
       .addCase(getList.fulfilled, (state, { payload }) => {
+        console.log(payload);
         return [...payload];
       })
       .addCase(getList.rejected, (state, { payload }) => {
@@ -51,5 +53,4 @@ export const commentSlice = createSlice({
 })
 
 export const { addComment, updateComment, deleteComment } = commentSlice.actions
-
 export default commentSlice.reducer

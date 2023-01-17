@@ -2,17 +2,16 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { deleteComment, getList } from '../redux/commentSlice';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { Props } from '../type/type';
+import { CProps } from '../type/type';
 
-export default function CommentList({form, setForm, handleUpdate} :Props) {
+export default function CommentList({handleUpdate} :CProps) {
   const dispatch = useAppDispatch();
   const comment = useAppSelector((state) => state.comment);
   
   useEffect(() => { dispatch(getList()) }, []);
 
-  const handleDelete = (id: number) => {
-    dispatch(deleteComment(id));
-  }
+  const handleDelete = (id: number) => dispatch(deleteComment(id));
+
   return (
     <>
       {comment?.map((comment:any, key:number) => (

@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { addComment, updateComment } from '../redux/commentSlice';
 import { useAppDispatch } from '../redux/hooks';
-import { CommentState, Props } from '../type/type';
+import { CommentState, FProps } from '../type/type';
 
-export default function Form({form, setForm, handleUpdate} :Props) {
+export default function Form({form, setForm} :FProps) {
   const dispatch = useAppDispatch();
 
   const handleChange = (e: any) => {
     const { name, value } = e.currentTarget;
-    setForm((form:CommentState) => ({ ...form, [name]: value }));
+    setForm((form: CommentState) => ({ ...form, [name]: value }));
   }
   
   const handleSubmit = (e: any) => {
