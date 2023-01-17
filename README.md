@@ -5,7 +5,7 @@
 
 </br>
 
-## [기능 상세 위키 바로가기](https://github.com/wanted-onboarding8-6/pre-onboarding-8th-3week-6/wiki)
+## 목차
 
 1. [프로젝트 실행 방법](#프로젝트-실행-방법)
 2. [구현사항](#구현사항)
