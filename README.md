@@ -5,7 +5,7 @@
 <br>
 ### 🗓 구현 일정 : 2023.01.16 - 01.17
 <br>
-### ![Team repo 바로 가기](https://github.com/wanted-onboarding8-6/pre-onboarding-8th-4week-6)
+### [Team repo 바로 가기](https://github.com/wanted-onboarding8-6/pre-onboarding-8th-4week-6)
 
 </br>
 
