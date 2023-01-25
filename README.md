@@ -1,9 +1,10 @@
 # 📝 댓글 CRUD with Redux
 
 ## 📌 구현
-<img width="60%" src="https://user-images.githubusercontent.com/107424974/214504313-012b7551-0a84-4ea2-b21c-6fb885d9c049.gif"/>
+<img width="80%" src="https://user-images.githubusercontent.com/107424974/214504313-012b7551-0a84-4ea2-b21c-6fb885d9c049.gif"/>
 #### 🗓 구현 일정 : 2023.01.16 - 01.17
-#### [Team repo 바로 가기](https://github.com/wanted-onboarding8-6/pre-onboarding-8th-4week-6)
+<br>
+#### ![Team repo 바로 가기](https://github.com/wanted-onboarding8-6/pre-onboarding-8th-4week-6)
 
 </br>
 
