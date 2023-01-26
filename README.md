@@ -1,13 +1,14 @@
 # 📝 댓글 CRUD with Redux
 
+## [팀 레포 바로가기](https://github.com/wanted-onboarding8-6/pre-onboarding-8th-4week-6)
+
 ## 📌 구현
-<img width="80%" src="https://user-images.githubusercontent.com/107424974/214504313-012b7551-0a84-4ea2-b21c-6fb885d9c049.gif"/>
-
-<br>
-
-#### [Team repo 바로 가기](https://github.com/wanted-onboarding8-6/pre-onboarding-8th-4week-6)
+<div align="center">
+   <img width="500px" src="https://user-images.githubusercontent.com/107424974/214783471-20e63c8a-ee0d-4b44-b20f-6f4d85b558b4.gif"/>
 
 #### 🗓 구현 일정 : 2023.01.16 - 01.17
+
+</div>
 
 <br>
 
@@ -28,12 +29,12 @@ npm install
 ```
 
 ```bash
-# Local Server 실행
+# Local json-server 실행
 npx json-server ./data.json --port 4000
 ```
 
 ```bash
-# 로컬 서버에서 실행
+# 로컬에서 실행
 npm start
 ```
 
